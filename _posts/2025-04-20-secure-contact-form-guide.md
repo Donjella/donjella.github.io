@@ -105,7 +105,7 @@ Bots are becoming increasingly sophisticated, and securing contact forms now req
 
 AI is fundamentally transforming the cyberfraud landscape by enabling attackers to scale operations, refine tactics, and bypass security measures with unprecedented efficiency. AI-powered botnets can dynamically adapt their behaviour, make autonomous decisions, and respond in real time to changing defences to bypass bot detection systems, making them a formidable threat to traditional security systems (Falokun, 2025).
 
-According to recent spam statistics reports, there is a sharp rise in AI-driven spam activities. Zscaler reported a 60 percent year-over-year increase in phishing activity, while SlashNext recorded a 1,265 percent spike in malicious email volume following the release of generative AI tools. With 61 percent of phishing emails now created using AI, contact forms are becoming prime targets (Law, 2025). In 2023, over 160 billion spam emails were sent each day, accounting for 46 percent of global email traffic (Ellis & Brandl, 2024).
+According to recent spam statistics reports, there is a sharp rise in AI-driven spam activities. Zscaler reported a 60% year-over-year increase in phishing activity, while SlashNext recorded a 1,265% spike in malicious email volume following the release of generative AI tools. With 61% of phishing emails now created using AI, contact forms are becoming prime targets (Law, 2025). In 2023, over 160 billion spam emails were sent each day, accounting for 46% of global email traffic (Ellis & Brandl, 2024).
 
 <figure style="text-align: center; margin: 2rem 0;">
   <img src="/assets/images/ai-fraud-stats.png" alt="Chart showing rise in AI-generated phishing emails targeting forms" style="max-width: 100%; height: auto; margin: auto;">
@@ -117,7 +117,7 @@ According to recent spam statistics reports, there is a sharp rise in AI-driven 
   </figcaption>
 </figure>
 
-Australia now ranks ninth globally for phishing targets, with a 479.3 percent increase in phishing content hosted within the country. Scamwatch received 109,000 phishing reports in 2023 alone, resulting in AU$26.1 million in losses. Despite the scale of the threat, only 10 percent of Australians report being concerned or aware of AI-powered scams (Law, 2025).
+Australia now ranks ninth globally for phishing targets, with a 479.3% increase in phishing content hosted within the country. Scamwatch received 109,000 phishing reports in 2023 alone, resulting in AU$26.1 million in losses. Despite the scale of the threat, only 10% of Australians report being concerned or aware of AI-powered scams (Law, 2025).
 
 ### Emerging Security Approaches
 
@@ -413,7 +413,7 @@ Our implementation follows the security principle of defence in depth, with mult
 5. Rate limiting - Prevents flooding and DDoS attempts
 6. Server-side validation - Final authoritative check
 
-Implementing a multi-layered security approach greatly strengthens protection against spam and phishing. A study in Computers & Security found that combining content filtering with behavioural analysis reduced false negatives by up to 55 percent (Zhou & Zhang, 2023). Similarly, research from the Future Technologies Conference 2024 showed that multi-factor authentication lowered unauthorized access risks by over 99.99 percent (Muir, Brown & Girma, 2024). These results support using layered defences such as CAPTCHA, honeypots, rate limiting, and server-side validation. If one measure fails, others remain in place. Unlike many tutorials that rely on a single technique, our modular and well-documented approach combines multiple methods to improve security without sacrificing usability.
+Implementing a multi-layered security approach greatly strengthens protection against spam and phishing. A study in Computers & Security found that combining content filtering with behavioural analysis reduced false negatives by up to 55% (Zhou & Zhang, 2023). Similarly, research from the Future Technologies Conference 2024 showed that multi-factor authentication lowered unauthorized access risks by over 99.99%  (Muir, Brown & Girma, 2024). These results support using layered defences such as CAPTCHA, honeypots, rate limiting, and server-side validation. If one measure fails, others remain in place. Unlike many tutorials that rely on a single technique, our modular and well-documented approach combines multiple methods to improve security without sacrificing usability.
 
 ## 5. Project Implementation Plan
 
@@ -685,7 +685,7 @@ To make the most of this form’s layered protection:
 2. **Simulate attacks** with tools like Postman, Insomnia, or browser dev tools to validate protections
 3. **Monitor traffic** and form submissions over time to adjust thresholds or improve UX/security balance
 
-As AI-generated spam and bot sophistication increase, secure form design isn't a one-off task—it’s an evolving practice. This prototype gives you a strong, modern foundation that can be extended for production-ready applications or integrated into larger platforms. Customizing this setup to fit your workflow ensures both protection and a polished user experience.
+As AI-generated spam and bot sophistication increase, secure form design isn't a one-off task—it’s an evolving practice. This prototype gives you a strong, modern foundation that can be extended for production-ready applications or integrated into larger platforms. Customising this setup to fit your workflow ensures both protection and a polished user experience.
 
 ## References
 
