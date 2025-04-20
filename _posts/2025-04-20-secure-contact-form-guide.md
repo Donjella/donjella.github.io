@@ -1,11 +1,101 @@
 ---
 layout: post
-title: "Create a Secure Contact Form Without Plugins: A Modern, Easy Guide"
+title: "Build a Secure Contact Form Without Plugins: A Comprehensive Yet Easy Guide"
 date: 2025-04-20
 author: Brendon Ang
 ---
 
-# Build a Secure Contact Form Without Plugins: A Comprehensive Yet Easy Guide
+<style>
+  h1 {
+    color: #2c3e50;
+  }
+
+  h2 {
+    color:rgb(18, 3, 114);
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+  }
+
+  h3 {
+    color:rgb(26, 103, 154);
+    font-weight: 600;
+  }
+
+  h4 {
+    color: #3498db;
+  }
+
+  a,
+  a:visited {
+  color:rgb(31, 6, 194); 
+  text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: #145d86; 
+    text-decoration: underline;
+  }
+
+  details {
+    margin-bottom: 2rem;
+  }
+  
+</style>
+
+<details>
+  <summary style="font-size: 2rem; font-weight: bold; cursor: pointer; color: #2c3e50;">
+    Table of Contents
+  </summary>
+  <ul style="margin-top: 10px; line-height: 1.7;">
+    <li><a href="#1-current-and-emerging-industry-trends-in-form-security">1. Current and Emerging Industry Trends in Form Security</a>
+      <ul>
+        <li><a href="#the-evolving-threat-of-ai-generated-spam">The Evolving Threat of AI-Generated Spam</a></li>
+        <li><a href="#emerging-security-approaches">Emerging Security Approaches</a></li>
+        <li><a href="#opportunities">Opportunities</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-ethical-considerations-in-form-security">2. Ethical Considerations in Form Security</a>
+      <ul>
+        <li><a href="#data-privacy-and-minimisation">Data Privacy and Minimisation</a></li>
+        <li><a href="#emerging-ai-related-ethical-challenges">Emerging AI-Related Ethical Challenges</a></li>
+        <li><a href="#accessibility-impact">Accessibility Impact</a></li>
+        <li><a href="#balance-between-user-experience-and-security">Balance Between User Experience and Security</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-the-problem-form-spam-and-security-vulnerabilities">3. The Problem: Form Spam and Security Vulnerabilities</a>
+      <ul>
+        <li><a href="#the-rise-of-automated-attacks">The Rise of Automated Attacks</a></li>
+        <li><a href="#cross-site-scripting-xss-vulnerabilities">Cross-Site Scripting (XSS) Vulnerabilities</a></li>
+        <li><a href="#data-validation-failures">Data Validation Failures</a></li>
+        <li><a href="#limitations-of-existing-solutions">Limitations of Existing Solutions</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-our-solution-multi-layered-security-implementation">4. Our Solution: Multi-Layered Security Implementation</a>
+      <ul>
+        <li><a href="#1-client-side-validation-frontend-javascript">Client-Side Validation</a></li>
+        <li><a href="#2-honeypot-traps-for-bot-detection">Honeypot Traps</a></li>
+        <li><a href="#3-time-based-validation">Time-Based Validation</a></li>
+        <li><a href="#4-rate-limiting">Rate Limiting</a></li>
+        <li><a href="#5-robust-server-side-validation">Server-Side Validation</a></li>
+        <li><a href="#6-structured-route-implementation">Structured Route Implementation</a></li>
+        <li><a href="#7-comprehensive-error-handling">Comprehensive Error Handling</a></li>
+        <li><a href="#why-this-multi-layered-approach-works">Why This Multi-Layered Approach Works</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-project-implementation-plan">5. Project Implementation Plan</a></li>
+    <li><a href="#6-skills-required-and-justified">6. Skills Required and Justified</a></li>
+    <li><a href="#7-lessons-learned-and-future-improvements">7. Lessons Learned and Future Improvements</a></li>
+    <li><a href="#conclusion">8. Conclusion</a>
+      <ul>
+        <li><a href="#whats-next">What's Next</a></li>
+        <li><a href="#customising-for-your-needs">Customising for Your Needs</a></li>
+        <li><a href="#implementation-tips">Implementation Tips</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">9. References</a></li>
+  </ul>
+</details>
 
 ## 1. Current and Emerging Industry Trends in Form Security
 
@@ -16,6 +106,16 @@ Bots are becoming increasingly sophisticated, and securing contact forms now req
 AI is fundamentally transforming the cyberfraud landscape by enabling attackers to scale operations, refine tactics, and bypass security measures with unprecedented efficiency. AI-powered botnets can dynamically adapt their behaviour, make autonomous decisions, and respond in real time to changing defences to bypass bot detection systems, making them a formidable threat to traditional security systems (Falokun, 2025).
 
 According to recent spam statistics reports, there is a sharp rise in AI-driven spam activities. Zscaler reported a 60 percent year-over-year increase in phishing activity, while SlashNext recorded a 1,265 percent spike in malicious email volume following the release of generative AI tools. With 61 percent of phishing emails now created using AI, contact forms are becoming prime targets (Law, 2025). In 2023, over 160 billion spam emails were sent each day, accounting for 46 percent of global email traffic (Ellis & Brandl, 2024).
+
+<figure style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/ai-fraud-stats.png" alt="Chart showing rise in AI-generated phishing emails targeting forms" style="max-width: 100%; height: auto; margin: auto;">
+  <figcaption style="font-size: 0.95rem; color: #555; margin-top: 0.5rem;">
+    Visualising the impact of AI-driven phishing: 61% of phishing emails are now generated using AI, making contact forms increasingly attractive targets<br>
+    <a href="https://www.redsearch.com.au/resources/ai-spam-statistics-australia/" target="_blank" style="color: rgb(185, 49, 97); text-decoration: none;">
+      Source: Red Search (2025)
+    </a>
+  </figcaption>
+</figure>
 
 Australia now ranks ninth globally for phishing targets, with a 479.3 percent increase in phishing content hosted within the country. Scamwatch received 109,000 phishing reports in 2023 alone, resulting in AU$26.1 million in losses. Despite the scale of the threat, only 10 percent of Australians report being concerned or aware of AI-powered scams (Law, 2025).
 
@@ -133,6 +233,13 @@ While many security approaches exist, most implementations suffer from significa
 
 ## 4. Our Solution: Multi-Layered Security Implementation
 
+<figure style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/form-overview.png" alt="Secure Contact Form Overview" style="max-width: 100%; height: auto; margin: auto;">
+  <figcaption style="font-size: 0.95rem; color: #555; margin-top: 0.5rem;">
+    An early look at our lightweight but highly secure contact form.
+  </figcaption>
+</figure>
+
 This project implements a comprehensive multi-layered defence strategy that improves upon existing approaches while maintaining excellent user experience:
 
 ### 1. Client-Side Validation (Frontend JavaScript)
@@ -213,6 +320,13 @@ const contactLimiter = rateLimit({
   message: "Too many contact form submissions. Please try again later.",
 });
 ```
+
+<figure style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/bot-spam-form.png" alt="Rate limiting triggered after too many submissions" style="max-width: 100%; height: auto; margin: auto;">
+  <figcaption style="font-size: 0.95rem; color: #555; margin-top: 0.5rem;">
+    Rate limiting mechanism in action—protecting the form from spam by rejecting excessive submissions within a short time frame.
+  </figcaption>
+</figure>
 
 This prevents flooding attacks while allowing legitimate users to submit forms without interruption.
 
@@ -520,30 +634,58 @@ Through thoughtful planning, clear technology choices, and intentional implement
 
 ### What's Next
 
-This resource was created to support developers—whether experienced or just starting out—in building secure contact forms from scratch without relying on third-party form handlers. You can explore the full implementation, including complete code examples and setup instructions, on the GitHub repository:
+This resource was created to help developers, whether you're just starting out or already experienced, build secure contact forms from scratch without relying on third-party form handlers.
 
-GitHub.com/Donjella/secure-contact-form
+Explore the full implementation, complete code examples, and setup instructions here:
+## [GitHub Repository](https://github.com/Donjella/secure-contact-form)
+
+The repository includes both frontend and backend code, plus detailed instructions for manual and API-based testing, making it ideal for both learning and customisation.
 
 ### Customising for Your Needs
 
-The project is designed to be easily customisable:
+This project was designed to be modular and easily adaptable to suit your application:
 
-- **Time-based validation**: Adjust the MIN_TIME_MS and MAX_TIME_MS constants in validation.js to fine-tune bot detection sensitivity
-- **Rate limiting**: Modify the submission limit (max) and time window (windowMs) in rateLimiter.js to match your application's traffic patterns
-- **Validation rules**: Customise field validation in validation.js to match your form's specific requirements
-- **Styling**: Adapt the CSS to match your website's design system
+- **Time-based Validation**  
+  Fine-tune the form submission time window in `src/middleware/validation.js` by adjusting the constants:
+  ```js
+  const MIN_TIME_MS = 3000;    // Minimum time (e.g., 3 seconds)
+  const MAX_TIME_MS = 3600000; // Maximum time (e.g., 1 hour)
+  ```
+  This lets you calibrate bot detection sensitivity based on your audience's behavior.
 
-While the honeypot implementation itself is relatively standard (a hidden input field that should remain empty), its placement and styling can be adjusted to make it less detectable by sophisticated bots.
+- **Rate Limiting**  
+  In `src/middleware/rateLimiter.js`, you can change how many form submissions are allowed per time period:
+  ```js
+  windowMs: 60 * 1000,  // 1-minute window
+  max: 3                // Limit to 3 submissions per IP
+  ```
+
+- **Validation Rules**  
+  All field validation is defined in `validation.js` using [Express Validator](https://express-validator.github.io/docs/). You can customize error messages, allowed characters, or input lengths to better match your use case.
+
+- **Frontend Styling**  
+  The CSS uses variables (`public/styles.css`) for easy theming. You can change colors, layout, and fonts to match your brand or site design:
+  ```css
+  :root {
+    --primary-color: #1a3a5f;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    ...
+  }
+  ```
+
+- **Honeypot Tweak**  
+  While the honeypot implementation uses a standard hidden input field, you can rename the field or reposition it in the DOM to avoid pattern-matching by bots. Pairing this with subtle CSS obfuscation techniques can further increase resilience.
 
 ### Implementation Tips
 
-For the best results when implementing this solution:
+To make the most of this form’s layered protection:
 
-1. Always maintain all three security layers (honeypot, time-based validation, and rate limiting)
-2. Test your form against automated submission tools before deployment
-3. Monitor submission patterns to identify and adapt to new attack vectors
+1. **Keep all three core protections active** (honeypot, timestamp validation, rate limiting)
+2. **Simulate attacks** with tools like Postman, Insomnia, or browser dev tools to validate protections
+3. **Monitor traffic** and form submissions over time to adjust thresholds or improve UX/security balance
 
-As AI-powered bots grow more sophisticated, secure form design will remain an ongoing challenge that demands continuous improvement. By building on this foundation and tailoring it to your specific needs, you can create a contact form that effectively protects against spam while delivering a seamless experience for legitimate users.
+As AI-generated spam and bot sophistication increase, secure form design isn't a one-off task—it’s an evolving practice. This prototype gives you a strong, modern foundation that can be extended for production-ready applications or integrated into larger platforms. Customizing this setup to fit your workflow ensures both protection and a polished user experience.
 
 ## References
 
