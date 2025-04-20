@@ -2,6 +2,7 @@
 layout: post
 title: "Create a Secure Contact Form Without Plugins: A Modern, Easy Guide"
 date: 2025-04-20
+author: Brendon Ang
 ---
 
 # Build a Secure Contact Form Without Plugins: A Comprehensive Yet Easy Guide
